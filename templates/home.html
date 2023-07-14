@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+        <link rel="stylesheet"  href="../static/css/style.css" type="text/css">
+    
+    </head>
+    <body>
+        
+        <div class="topnav">
+            <a class="active" href="/home">Home</a>
+            
+            <div class="dropdown">
+                <button class="dropbtn">Dropdown
+                  <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                  <a href="#">Link 1</a>
+                  <a href="#">Link 2</a>
+                  <a href="#">Link 3</a>
+                </div>
+                </div>
+            <div class="topnav-right">
+             
+              <a href="#">Sign out</a>
+             
+              <a href="#">Log in</a>
+              <a href="#">Join Now</a>
+              
+            </div>
+          </div>
+
+          <div>
+            <center>
+              {% if msg %}
+            <h3> <b>Cell Name = </b>{{cell}} : <b>Value =</b> {{msg}}</h3>
+            {% else %}
+            <h3>{{ message }}</h3>
+          {% endif%}
+              </center>
+            
+          </div>
+          <center><h2>For update value</h2></center>
+          <form method="post" action="/update">
+            <label for="cell">Cell no:</label>
+            <input type="text" id="cell" name="cell" required>
+            <label for="value">Value:</label>
+            <input type="text"id="value" name="value"  required>
+            <button type="submit" value="submit">Submit </button>
+          </form>
+          <center><h2>For delete value</h2></center>
+          <form method="post" action="/delete">
+            <label for="cell">Cell no:</label>
+            <input type="text" id="cell" name="cell" required>
+            <button type="submit" value="submit">Submit </button>
+          </form>
+          <center><h2>For append value</h2></center>
+          <form method="post" action="/append">
+            <label for="cell">Colomn name:</label>
+            <input type="text" id="col" name="col" required>
+            <label for="value">Value:</label>
+            <input type="text"id="value" name="value"  required>
+            <button type="submit" value="submit">Submit </button>
+          </form>
+          <center><h2>For read value</h2></center>
+          <form method="post" action="/read">
+            <label for="cell">cell no:</label>
+            <input type="text" id="cell" name="cell" required>
+            <button type="submit" value="submit">Submit </button>
+          </form>
+          
+          </body>
+</html>
